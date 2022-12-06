@@ -36,11 +36,18 @@ function onRemoveBook(ev, bookId) {
     }
 }
 
-function onAddBook() {
-    var name = prompt('Enter book name')
-    var price = +prompt('Enter book price')
-    if (name && price) {
-        addBook(name, price)
+function onAddBook(event) {
+    event.preventDefault()
+
+    const elBookName = document.querySelector('input[name="newBookName"]')
+    const newBookName = elBookName.value
+    const elBookPrice = document.querySelector('input[name="newBookPrice"]')
+    const newBookPrice = elBookPrice.value
+
+    if (newBookName && newBookPrice) {
+        addBook(newBookName, newBookPrice)
+        elBookName.value = ''
+        elBookPrice.value = ''
         renderBooks()
     }
 }

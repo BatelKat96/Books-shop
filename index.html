@@ -20,9 +20,23 @@
     </select>
 
     <div class="container">
-        <button class="btn-add-book" onclick="onAddBook()" data-trans="add">Add book</button>
+        <form class="adding-book">
+            <div class="new-book">
+                <label for="newBookName" data-trans="add-book-request">The new book name: </label>
+                <input name="newBookName" type="txt" id="newBookName" placeholder="Enter book name"
+                    data-trans="add-book-placeholder" required />
+            </div>
+            <div class="new-price">
+                <label for="newBookPrice" data-trans="add-price-request">The new book price: </label>
+                <input name="newBookPrice" type="number" id="newBookPrice" min="20" max="50" required />
+                <!--placeholder="Enter_book_price"-->
+            </div>
+            <button type="submit" class="btn-add-book" data-trans="add" onclick="onAddBook(event)">Add</button>
 
-        <section class="books-filter">
+        </form>
+
+
+        <section class=" books-filter">
             <label>
                 <span data-trans="max-price">Max price:</span>
                 <input type="range" min="20" max="50" value="50" class="filter-max-price-range"

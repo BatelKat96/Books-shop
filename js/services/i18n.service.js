@@ -3,6 +3,18 @@ var gTrans = {
         en: 'Welcome to my books shop!',
         he: 'ברוכים הבאים לחנות הספרים שלי'
     },
+    'add-book-request': {
+        en: 'The new book name:',
+        he: 'שם הספר החדש:'
+    },
+    'add-book-placeholder': {
+        en: 'Enter book name',
+        he: 'הכנס את שם הספר החדש'
+    },
+    'add-price-request': {
+        en: 'The new book price:',
+        he: 'מחיר הספר החדש:'
+    },
     add: {
         en: 'Add book',
         he: 'הוסף ספר'

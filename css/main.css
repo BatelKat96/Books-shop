@@ -29,15 +29,24 @@ h1 {
     min-width: fit-content;
 }
 
-.btn-add-book {
+.adding-book {
     display: flex;
-    justify-content: left;
-    margin-bottom: 20px;
-    font-size: 18px;
-    padding: 8px;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.new-book,
+.new-price {
+    margin: 11px;
+}
+
+.btn-add-book {
+    align-self: start;
+    padding: 5px 9px;
     background-color: #ce777789;
     color: white;
     border: #ce777709 2px solid;
+    margin: 10px;
 }
 
 
@@ -86,11 +95,22 @@ th {
 .btn-action,
 .close-modal-btn,
 .update-rate {
-    border: #f7dada09 2px solid;
-    background-color: #ce7777bd;
-    color: white;
     padding: 5px;
     margin-top: 10px;
+    color: white;
+}
+
+.update-rate,
+.close-modal-btn {
+    border: #f7dada09 2px solid;
+    background-color: #2b3a55;
+}
+
+
+.btn-action {
+    border: #f7dada09 2px solid;
+    background-color: #ce7777bd;
+
 }
 
 .move-page {

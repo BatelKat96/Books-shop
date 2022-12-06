@@ -17,7 +17,6 @@ function movePage(msg) {
     if (msg === 'minus') {
         gPageIdx--
         if (gPageIdx * PAGE_SIZE <= gBooks.length) {
-            console.log('prev:', gPageIdx)
             gPageIdx = 0
         }
     }
@@ -25,8 +24,6 @@ function movePage(msg) {
         gPageIdx++
         if (gPageIdx * PAGE_SIZE >= gBooks.length) {
             gPageIdx = Math.ceil(gBooks.length / PAGE_SIZE) - 1
-            console.log('gPageIdx:', gPageIdx)
-
         }
     }
 }
@@ -91,8 +88,10 @@ function setSort(sortBy = {}) {
     if (sortBy.price) {
         gBooks.sort((c1, c2) => (c1.price - c2.price) * sortBy.price)
         gIsSort = !gIsSort
-    }
-    else if (sortBy.name) {
+    } else if (sortBy.rate) {
+        gBooks.sort((c1, c2) => (c1.rate - c2.rate) * sortBy.rate)
+        gIsSort = !gIsSort
+    } else if (sortBy.name) {
         gBooks.sort((c1, c2) => c1.name.localeCompare(c2.name) * sortBy.name)
         gIsSort = !gIsSort
     }

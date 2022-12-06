@@ -60,7 +60,7 @@
                 <th data-trans="book-id">Id</th>
                 <th class="cols" data-trans="book-name-table" onclick="onSetSortBy('name')">Name ↕️</th>
                 <th data-trans="price-table" onclick="onSetSortBy('price')" class="price-th">Price ↕️</th>
-                <th data-trans="rate">Rate</th>
+                <th data-trans="rate" onclick="onSetSortBy('rate')" class="rate-th">Rate ↕️</th>
                 <th data-trans="image">Image</th>
                 <th colspan="3" data-trans="action">Action</th>
             </thead>
@@ -74,7 +74,7 @@
         </div>
     </div>
 
-    <div class="modal modal-lg modal-dialog-scrollable">
+    <div class="modal-me">
         <h2></h2>
         <h4 class="book-price-title" data-trans="price"> Price:</h4>
         <h4 class="book-price-count"></h4>

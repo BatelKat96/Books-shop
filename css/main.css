@@ -83,6 +83,7 @@ th {
 }
 
 .price-th,
+.rate-th,
 .cols {
     cursor: pointer;
 }
@@ -118,11 +119,11 @@ th {
     justify-content: space-between;
 }
 
-.modal {
+.modal-me {
     background-color: rgb(173, 216, 230);
     padding: 10px 50px;
     text-align: center;
-    width: 20vw;
+    width: 40vw;
     display: none;
     position: fixed;
     top: 30px;

@@ -56,8 +56,8 @@ var gTrans = {
         he: ':מחיר'
     },
     rate: {
-        en: 'Rate',
-        he: 'דירוג'
+        en: 'Rate ↕️',
+        he: '↕️ דירוג'
     },
     image: {
         en: 'Image',

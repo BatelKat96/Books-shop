@@ -75,12 +75,12 @@ function onOpenModal(ev, bookId) {
     setGCurrBookId(bookId)
     var book = getBookById(bookId)
     renderModal(book)
-    var elModal = document.querySelector('.modal')
+    var elModal = document.querySelector('.modal-me')
     elModal.style.display = 'block'
 }
 
 function renderModal(book) {
-    var elModal = document.querySelector('.modal')
+    var elModal = document.querySelector('.modal-me')
     elModal.querySelector('h2').innerText = book.name
     elModal.querySelector('.book-price-count').innerText = book.price
     elModal.querySelector('.desc').innerText = book.desc
@@ -101,7 +101,7 @@ function onUpdateRate(msg) {
 }
 
 function onCloseModal() {
-    var elModal = document.querySelector('.modal')
+    var elModal = document.querySelector('.modal-me')
     elModal.style.display = 'none'
 }
 

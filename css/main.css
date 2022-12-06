@@ -23,11 +23,10 @@ h1 {
 
 .container {
     margin: 30px auto;
-
-
     background-color: #E8C4C4;
     padding: 30px;
     color: black;
+    min-width: fit-content;
 }
 
 .btn-add-book {

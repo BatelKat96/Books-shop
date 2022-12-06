@@ -1,6 +1,6 @@
 'use strict'
 const STORAGE_KEY = 'bookDB'
-const PAGE_SIZE = 4
+const PAGE_SIZE = 3
 var gBooks
 var gCurrBookId
 

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./lib/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="./css/main.css">
     <title>Book Shop</title>
 </head>
@@ -40,10 +41,10 @@
         </section>
 
 
-        <table>
+        <table class="table table-dark table-sm table-striped">
             <thead>
                 <th data-trans="book-id">Id</th>
-                <th data-trans="book-name">Name</th>
+                <th class="cols" data-trans="book-name">Name</th>
                 <th data-trans="price">Price</th>
                 <th data-trans="rate">Rate</th>
                 <th data-trans="image">Image</th>
@@ -59,7 +60,7 @@
         </div>
     </div>
 
-    <div class="modal">
+    <div class="modal modal-lg modal-dialog-scrollable">
         <h2></h2>
         <h4 class="book-price-title" data-trans="price"> Price:</h4>
         <h4 class="book-price-count"></h4>
@@ -73,6 +74,7 @@
         <button class="close-modal-btn" onclick="onCloseModal()" data-trans="close">Close</button>
     </div>
 
+    <script src="./lib/bootstrap/bootstrap.bundel.js"></script>
     <script src="./js/services/util.service.js"></script>
     <script src="./js/services/storage.service.js"></script>
     <script src="./js/services/i18n.service.js"></script>

@@ -45,7 +45,6 @@ h1 {
     display: flex;
     justify-content: space-around;
     margin: 10px;
-
 }
 
 .search-box button {
@@ -55,9 +54,10 @@ h1 {
 table {
     border-collapse: collapse;
     border: 2px black solid;
-    background-color: #F2E5E5;
+    background-color: #ffffff;
     margin: 10px auto;
     width: 75vw;
+    min-height: 50vh;
 }
 
 table td,
@@ -66,16 +66,26 @@ th {
     border: 2px black solid;
 }
 
+
+.cols {
+    width: fit-content;
+    min-width: 178px;
+    overflow: visible;
+}
+
 .img-book {
+    margin-top: 7px;
     width: 50px;
 }
 
 .btn-action,
 .close-modal-btn,
 .update-rate {
-    background-color: #2b3a55;
+    border: #f7dada09 2px solid;
+    background-color: #ce7777bd;
     color: white;
-    padding: 7px;
+    padding: 5px;
+    margin-top: 10px;
 }
 
 .move-page {

@@ -27,7 +27,7 @@ function renderBooks() {
 
 function onRemoveBook(ev, bookId) {
     ev.stopPropagation()
-    if (confirm('Do you want to delete this book? ')) {
+    if (confirm(getTrans('sure'))) {
         removeBook(bookId)
         renderBooks()
     }

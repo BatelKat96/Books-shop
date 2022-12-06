@@ -59,6 +59,10 @@ var gTrans = {
         en: 'Delete',
         he: 'מחק'
     },
+    sure: {
+        en: 'Do you want to delete this book?',
+        he: 'האם אתה בטוח שאתה רוצה למחוק את הספר הזה?'
+    },
     'prev-page': {
         en: 'Prev Page',
         he: 'עמוד קודם'

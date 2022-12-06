@@ -78,6 +78,18 @@ var gTrans = {
 var gCurrLang = 'en'
 
 
+function getTrans() {
+    return gTrans
+}
+
+
+function getTrans(transKey) {
+    const key = gTrans[transKey]
+    if (!key) return 'UNKNOWN'
+    var translation = key[gCurrLang]
+    if (!translation) translation = key.en
+    return translation
+}
 
 function tarnslate() {
     var els = document.querySelectorAll('[data-trans]')
@@ -85,8 +97,6 @@ function tarnslate() {
         const transKey = el.dataset.trans
         const translation = getTrans(transKey)
         el.innerText = translation
-
-        // done: support placeholder    
         if (el.placeholder) el.placeholder = translation
     })
 }
@@ -94,5 +104,4 @@ function tarnslate() {
 
 function setLang(lang) {
     gCurrLang = lang
-    console.log('gCurrLang:', gCurrLang)
 }

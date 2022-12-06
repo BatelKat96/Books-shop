@@ -24,15 +24,15 @@
         <button class="btn-add-book" onclick="onAddBook()" data-trans="add">Add book</button>
 
         <section class="books-filter">
-            <label data-trans="max-price">
-                Max price:
+            <label>
+                <span data-trans="max-price">Max price:</span>
                 <input type="range" min="20" max="50" value="50" class="filter-max-price-range"
                     onchange="this.title=this.value;onSetFilterBy({maxPrice: this.value})" />
             </label>
-            <label data-trans="min-rate">
-                Min rate:
+            <label>
+                <span data-trans="min-rate">Min rate:</span>
                 <input type="range" min="0" max="10" value="0" class="filter-min-rate-range"
-                    onchange="this.title=this.value;onSetFilterBy({minRate: this.value})" />
+                    onchange="this.title=this.value; onSetFilterBy({minRate: this.value})" />
             </label>
 
             <form class="search-box" onsubmit="onSearch(event)">
@@ -63,7 +63,9 @@
 
     <div class="modal">
         <h2></h2>
-        <h4 data-trans="price">Price: <span></span></h4>
+        <h4 class="book-price-title" data-trans="price"> Price:</h4>
+        <h4 class="book-price-count"></h4>
+
         <p class="desc"></p>
         <div>
             <button class="update-rate" onclick="onUpdateRate('minus')">-</button>

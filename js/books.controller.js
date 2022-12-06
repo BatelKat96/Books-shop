@@ -8,7 +8,6 @@ function onInit() {
 
 function renderBooks() {
     const books = getBooks()
-
     // const{id,imageUrl,name,price,rate}=book
     var strHTMLs = books.map(book => {
 
@@ -18,9 +17,9 @@ function renderBooks() {
         <td>${book.price} </td>
         <td>${book.rate} </td>
         <td><img src="./img/${book.imageUrl}" alt="${book.name}" class="img-book"/> </td> 
-        <td><button class=" btn-action btn-read" onclick="onOpenModal(event,'${book.id}')" data-trans="read">Read</button> </td>
-        <td><button class="btn-action btn-update" onclick="onUpdateBook(event,'${book.id}')" data-trans="update">Update</button> </td>
-        <td><button class="btn-action btn-remove" onclick="onRemoveBook(event,'${book.id}')" data-trans="delete">Delete</button> </td>
+        <td><button class=" btn-action btn-read" onclick="onOpenModal(event,'${book.id}')" data-trans="read"> ${getTrans("read")}</button> </td>
+        <td><button class="btn-action btn-update" onclick="onUpdateBook(event,'${book.id}')" data-trans="update">${getTrans("update")}</button> </td>
+        <td><button class="btn-action btn-remove" onclick="onRemoveBook(event,'${book.id}')" data-trans="delete">${getTrans("delete")}</button> </td>
         </tr>`
     })
     document.querySelector('.gBooks-list').innerHTML = strHTMLs.join('')
@@ -73,7 +72,7 @@ function onOpenModal(ev, bookId) {
 function renderModal(book) {
     var elModal = document.querySelector('.modal')
     elModal.querySelector('h2').innerText = book.name
-    elModal.querySelector('h4 span').innerText = book.price
+    elModal.querySelector('.book-price-count').innerText = book.price
     elModal.querySelector('.desc').innerText = book.desc
     elModal.querySelector('.rate1').innerText = book.rate
 }
@@ -133,6 +132,6 @@ function onSetLang(lang) {
     if (lang === 'he') document.body.classList.add('rtl')
     else document.body.classList.remove('rtl')
 
-tarnslate()
-
+    tarnslate()
+    renderBooks()
 }

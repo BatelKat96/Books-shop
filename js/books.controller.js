@@ -1,6 +1,8 @@
 'use strict'
 
 function onInit() {
+    // tarnss()
+    tarnslate()
     renderFilterByQueryStringParams()
     renderBooks()
 }
@@ -99,7 +101,7 @@ function onSetFilterBy(filterBy) {
     filterBy = setBookFilter(filterBy)
     renderBooks()
 
-    const queryStringParams = `?maxPrice=${filterBy.maxPrice}&minRate=${filterBy.minRate}&search=${filterBy.search}`
+    const queryStringParams = `?maxPrice=${filterBy.maxPrice}&minRate=${filterBy.minRate}&search=${filterBy.search}&lang=${filterBy.lang}`
     const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + queryStringParams
     window.history.pushState({ path: newUrl }, '', newUrl)
 }
@@ -109,7 +111,8 @@ function renderFilterByQueryStringParams() {
     const filterBy = {
         maxPrice: +queryStringParams.get('maxPrice') || 50,
         minRate: +queryStringParams.get('minRate') || 0,
-        search: queryStringParams.get('search') || ''
+        search: queryStringParams.get('search') || '',
+        lang: queryStringParams.get('lang') || 'en'
     }
 
     if (!filterBy.minRate && !filterBy.maxPrice) return
@@ -117,6 +120,7 @@ function renderFilterByQueryStringParams() {
     document.querySelector('.filter-max-price-range').value = filterBy.maxPrice
     document.querySelector('.filter-min-rate-range').value = filterBy.minRate
     document.querySelector('input[name="search-txt"]').value = filterBy.search
+    document.querySelector('.choose-lang').value = filterBy.lang
     setBookFilter(filterBy)
 }
 
@@ -128,10 +132,21 @@ function onMovePage(msg) {
 }
 
 function onSetLang(lang) {
+    console.log('lang:', lang)
+
+    onSetFilterBy({ lang: lang })
     setLang(lang)
     if (lang === 'he') document.body.classList.add('rtl')
     else document.body.classList.remove('rtl')
-
     tarnslate()
     renderBooks()
+}
+
+function tarnss() {
+    const queryString = window.location.search;
+    var x = queryString.split('lang=')
+    var lang = x[x.length - 1]
+    gCurrLang = lang
+    onSetLang(lang)
+
 }

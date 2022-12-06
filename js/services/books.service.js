@@ -5,7 +5,7 @@ var gBooks
 var gCurrBookId
 
 var gPageIdx = 0
-var gFilterBy = { maxPrice: 50, minRate: 0, search: '' }
+var gFilterBy = { maxPrice: 50, minRate: 0, search: '', lang: 'en' }
 var gTxtSearch
 
 _createBooks()
@@ -78,6 +78,8 @@ function setBookFilter(filterBy = {}) {
     if (filterBy.maxPrice !== undefined) gFilterBy.maxPrice = filterBy.maxPrice
     if (filterBy.minRate !== undefined) gFilterBy.minRate = filterBy.minRate
     if (filterBy.search !== undefined) gFilterBy.search = filterBy.search
+    if (filterBy.lang !== undefined) gFilterBy.lang = filterBy.lang
+
 
     return gFilterBy
 }
@@ -118,3 +120,5 @@ function _createBooks() {
 function _saveBookToStorage() {
     saveToStorage(STORAGE_KEY, gBooks)
 }
+
+

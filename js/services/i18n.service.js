@@ -78,13 +78,7 @@ var gTrans = {
 
 }
 
-
 var gCurrLang = 'en'
-
-
-function getTrans() {
-    return gTrans
-}
 
 
 function getTrans(transKey) {

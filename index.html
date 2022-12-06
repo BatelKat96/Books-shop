@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Book Shop</title>
+</head>
+
+<body onload="onInit()">
+    <div class="header">
+        <h1 data-trans="title"> Welcome to my books shop!</h1>
+        <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Magni, ratione exercitationem quo quisquam laudantium nisi!</p>
+    </div>
+    <select onchange="onSetLang(this.value)">
+        <option value="en">English</option>
+        <option value="he">עברית</option>
+    </select>
+
+    <div class="container">
+        <button class="btn-add-book" onclick="onAddBook()" data-trans="add">Add book</button>
+
+        <section class="books-filter">
+            <label data-trans="max-price">
+                Max price:
+                <input type="range" min="20" max="50" value="50" class="filter-max-price-range"
+                    onchange="this.title=this.value;onSetFilterBy({maxPrice: this.value})" />
+            </label>
+            <label data-trans="min-rate">
+                Min rate:
+                <input type="range" min="0" max="10" value="0" class="filter-min-rate-range"
+                    onchange="this.title=this.value;onSetFilterBy({minRate: this.value})" />
+            </label>
+
+            <form class="search-box" onsubmit="onSearch(event)">
+                <input type="text" name="search-txt" placeholder="What to search?" data-trans="placeholder" />
+                <button data-trans="search">Search</button>
+            </form>
+        </section>
+
+
+        <table>
+            <thead>
+                <th data-trans="book-id">Id</th>
+                <th data-trans="book-name">Name</th>
+                <th data-trans="price">Price</th>
+                <th data-trans="rate">Rate</th>
+                <th data-trans="image">Image</th>
+                <th colspan="3" data-trans="action">Action</th>
+            </thead>
+            <tbody class="gBooks-list">
+            </tbody>
+        </table>
+
+        <div class="move-page">
+            <button onclick="onMovePage('minus')" data-trans="prev-page">Prev Page</button>
+            <button onclick="onMovePage('plus')" data-trans="next-page">Next Page</button>
+        </div>
+    </div>
+
+    <div class="modal">
+        <h2></h2>
+        <h4 data-trans="price">Price: <span></span></h4>
+        <p class="desc"></p>
+        <div>
+            <button class="update-rate" onclick="onUpdateRate('minus')">-</button>
+            <span class="rate1">0</span>
+            <button class="update-rate" onclick="onUpdateRate('plus')">+</button>
+        </div>
+        <button class="close-modal-btn" onclick="onCloseModal()" data-trans="close">Close</button>
+    </div>
+
+    <script src="./js/services/util.service.js"></script>
+    <script src="./js/services/storage.service.js"></script>
+    <script src="./js/services/i18n.service.js"></script>
+    <script src="./js//services/books.service.js"></script>
+    <script src="./js/books.controller.js"></script>
+
+
+</body>
+
+</html>

@@ -1,8 +1,7 @@
 'use strict'
 
 function onInit() {
-    // tarnss()
-    tarnslate()
+    findLangFromParams()
     renderFilterByQueryStringParams()
     renderBooks()
 }
@@ -25,6 +24,7 @@ function renderBooks() {
         </tr>`
     })
     document.querySelector('.gBooks-list').innerHTML = strHTMLs.join('')
+    tarnslate()
 }
 
 function onRemoveBook(ev, bookId) {
@@ -132,8 +132,6 @@ function onMovePage(msg) {
 }
 
 function onSetLang(lang) {
-    console.log('lang:', lang)
-
     onSetFilterBy({ lang: lang })
     setLang(lang)
     if (lang === 'he') document.body.classList.add('rtl')
@@ -142,11 +140,24 @@ function onSetLang(lang) {
     renderBooks()
 }
 
-function tarnss() {
-    const queryString = window.location.search;
-    var x = queryString.split('lang=')
-    var lang = x[x.length - 1]
-    gCurrLang = lang
-    onSetLang(lang)
-
+function findLangFromParams() {
+    const queryString = window.location.search
+    if (queryString.search('lang') > 0) {
+        var splitParams = queryString.split('lang=')
+        var lang = splitParams[splitParams.length - 1]
+        onSetLang(lang)
+    }
 }
+
+
+
+// function tarnss() {
+//     const queryString = window.location.search;
+//     console.log('queryString:', queryString)
+
+//     var x = queryString.split('lang=')
+//     var lang = x[x.length - 1]
+//     gCurrLang = lang
+//     onSetLang(lang)
+
+// }

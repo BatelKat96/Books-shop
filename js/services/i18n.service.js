@@ -27,13 +27,21 @@ var gTrans = {
         en: 'Id',
         he: 'ברקוד'
     },
+    'book-name-table': {
+        en: 'Name ↕️',
+        he: '↕️ שם'
+    },
     'book-name': {
         en: 'Name',
         he: 'שם'
     },
+    'price-table': {
+        en: 'Price ↕️',
+        he: '↕️ מחיר'
+    },
     price: {
-        en: 'Price',
-        he: 'מחיר'
+        en: 'Price:',
+        he: ':מחיר'
     },
     rate: {
         en: 'Rate',

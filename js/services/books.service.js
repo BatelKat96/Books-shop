@@ -3,6 +3,8 @@ const STORAGE_KEY = 'bookDB'
 const PAGE_SIZE = 3
 var gBooks
 var gCurrBookId
+var gSortBy
+var gIsSort
 
 var gPageIdx = 0
 var gFilterBy = { maxPrice: 50, minRate: 0, search: '', lang: 'en' }
@@ -83,6 +85,19 @@ function setBookFilter(filterBy = {}) {
 
     return gFilterBy
 }
+
+
+function setSort(sortBy = {}) {
+    if (sortBy.price) {
+        gBooks.sort((c1, c2) => (c1.price - c2.price) * sortBy.price)
+        gIsSort = !gIsSort
+    }
+    else if (sortBy.name) {
+        gBooks.sort((c1, c2) => c1.name.localeCompare(c2.name) * sortBy.name)
+        gIsSort = !gIsSort
+    }
+}
+
 
 
 

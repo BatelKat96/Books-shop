@@ -73,6 +73,11 @@ th {
     overflow: visible;
 }
 
+.price-th,
+.cols {
+    cursor: pointer;
+}
+
 .img-book {
     margin-top: 7px;
     width: 50px;

@@ -1,5 +1,6 @@
 'use strict'
 
+
 function onInit() {
     findLangFromParams()
     renderFilterByQueryStringParams()
@@ -141,13 +142,29 @@ function onSetLang(lang) {
 }
 
 function findLangFromParams() {
-    const queryString = window.location.search
-    if (queryString.search('lang') > 0) {
-        var splitParams = queryString.split('lang=')
-        var lang = splitParams[splitParams.length - 1]
+    const queryString = new URLSearchParams(window.location.search)
+    if (queryString.get('lang')) {
+        var lang = queryString.get('lang')
         onSetLang(lang)
     }
 }
+
+
+function onSetSortBy(sortBy) {
+    var prop = sortBy
+    var sortBy = {}
+    sortBy[prop] = (gIsSort) ? -1 : 1
+
+    setSort(sortBy)
+    renderBooks()
+}
+
+
+
+
+
+
+
 
 
 
